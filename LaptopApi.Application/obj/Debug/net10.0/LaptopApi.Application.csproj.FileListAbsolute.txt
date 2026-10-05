@@ -1,0 +1,15 @@
+D:\Internship\LaptopAPI\LaptopApi.Application\bin\Debug\net10.0\LaptopApi.Application.deps.json
+D:\Internship\LaptopAPI\LaptopApi.Application\bin\Debug\net10.0\LaptopApi.Application.dll
+D:\Internship\LaptopAPI\LaptopApi.Application\bin\Debug\net10.0\LaptopApi.Application.pdb
+D:\Internship\LaptopAPI\LaptopApi.Application\bin\Debug\net10.0\LaptopApi.Domain.dll
+D:\Internship\LaptopAPI\LaptopApi.Application\bin\Debug\net10.0\LaptopApi.Domain.pdb
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.csproj.AssemblyReference.cache
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.AssemblyInfoInputs.cache
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.AssemblyInfo.cs
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.csproj.CoreCompileInputs.cache
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopAp.A52928EF.Up2Date
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.dll
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\refint\LaptopApi.Application.dll
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.pdb
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\ref\LaptopApi.Application.dll

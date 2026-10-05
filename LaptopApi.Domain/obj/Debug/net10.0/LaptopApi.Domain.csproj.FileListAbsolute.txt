@@ -1,0 +1,11 @@
+D:\Internship\LaptopAPI\LaptopApi.Domain\bin\Debug\net10.0\LaptopApi.Domain.deps.json
+D:\Internship\LaptopAPI\LaptopApi.Domain\bin\Debug\net10.0\LaptopApi.Domain.dll
+D:\Internship\LaptopAPI\LaptopApi.Domain\bin\Debug\net10.0\LaptopApi.Domain.pdb
+D:\Internship\LaptopAPI\LaptopApi.Domain\obj\Debug\net10.0\LaptopApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Internship\LaptopAPI\LaptopApi.Domain\obj\Debug\net10.0\LaptopApi.Domain.AssemblyInfoInputs.cache
+D:\Internship\LaptopAPI\LaptopApi.Domain\obj\Debug\net10.0\LaptopApi.Domain.AssemblyInfo.cs
+D:\Internship\LaptopAPI\LaptopApi.Domain\obj\Debug\net10.0\LaptopApi.Domain.csproj.CoreCompileInputs.cache
+D:\Internship\LaptopAPI\LaptopApi.Domain\obj\Debug\net10.0\LaptopApi.Domain.dll
+D:\Internship\LaptopAPI\LaptopApi.Domain\obj\Debug\net10.0\refint\LaptopApi.Domain.dll
+D:\Internship\LaptopAPI\LaptopApi.Domain\obj\Debug\net10.0\LaptopApi.Domain.pdb
+D:\Internship\LaptopAPI\LaptopApi.Domain\obj\Debug\net10.0\ref\LaptopApi.Domain.dll

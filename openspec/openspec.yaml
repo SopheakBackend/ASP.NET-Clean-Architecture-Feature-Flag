@@ -1,0 +1,54 @@
+openapi: 3.0.3
+info:
+  title: Laptop Catalog API (Clean Architecture & Feature Flags)
+  description: OpenAPI spec for testing feature flags and clean architecture endpoints.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5273
+    description: Local Development Server
+
+paths:
+  /api/laptops:
+    get:
+      summary: Get all laptops
+      description: Returns list of laptops. Contains 'discountedPrice' if EnableDiscountPrice feature flag is enabled.
+      responses:
+        '200':
+          description: A list of laptops
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LaptopDto'
+
+  /api/laptops/experimental-list:
+    get:
+      summary: Get experimental laptop list
+      description: Feature gated endpoint. Returns 404 Not Found if EnableExperimentalList flag is set to false.
+      responses:
+        '200':
+          description: Experimental endpoint data accessible
+        '404':
+          description: Endpoint disabled by FeatureGate
+
+components:
+  schemas:
+    LaptopDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        brand:
+          type: string
+        model:
+          type: string
+        price:
+          type: number
+          format: decimal
+        discountedPrice:
+          type: number
+          format: decimal
+          nullable: true
+          description: Populated only when 'EnableDiscountPrice' feature flag is true.

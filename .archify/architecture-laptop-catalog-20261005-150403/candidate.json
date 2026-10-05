@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Laptop Catalog API",
+    "output": ".archify/architecture-laptop-catalog-20261005-150403/laptop-catalog.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/Sunxander/LaptopAPI.git",
+      "provider": "github",
+      "link_mode": "local-only",
+      "revision": "0000000000000000000000000000000000000000"
+    }
+  },
+  "components": [
+    {
+      "id": "clients",
+      "type": "external",
+      "label": "HTTP Clients",
+      "sublabel": "Browser / Swagger / curl",
+      "pos": [60, 360],
+      "size": [150, 70],
+      "sources": [
+        { "path": "LaptopApi.Api/Program.cs", "line": 8, "end_line": 28, "label": "Web app setup" }
+      ]
+    },
+    {
+      "id": "controller",
+      "type": "backend",
+      "label": "LaptopsController",
+      "sublabel": "REST API layer",
+      "pos": [310, 360],
+      "size": [180, 72],
+      "sources": [
+        { "path": "LaptopApi.Api/Controllers/LaptopsController.cs", "line": 7, "end_line": 31, "label": "Controller HTTP contract" }
+      ]
+    },
+    {
+      "id": "service",
+      "type": "backend",
+      "label": "LaptopService",
+      "sublabel": "Application services",
+      "pos": [610, 360],
+      "size": [180, 74],
+      "sources": [
+        { "path": "LaptopApi.Application/LaptopService.cs", "line": 11, "end_line": 35, "label": "Orchestration logic" }
+      ]
+    },
+    {
+      "id": "feature-flags",
+      "type": "security",
+      "label": "Feature Management",
+      "sublabel": "EnableDiscountPrice / EnableExperimentalList",
+      "pos": [610, 120],
+      "size": [190, 90],
+      "sources": [
+        { "path": "LaptopApi.Api/appsettings.json", "line": 9, "end_line": 12, "label": "Feature flag configuration" },
+        { "path": "LaptopApi.Api/Controllers/LaptopsController.cs", "line": 25, "end_line": 30, "label": "Experimental endpoint gate" }
+      ]
+    },
+    {
+      "id": "domain",
+      "type": "backend",
+      "label": "Laptop Domain",
+      "sublabel": "Laptop + repository abstraction",
+      "pos": [910, 360],
+      "size": [180, 74],
+      "sources": [
+        { "path": "LaptopApi.Domain/Laptop.cs", "line": 3, "end_line": 8, "label": "Domain entity" },
+        { "path": "LaptopApi.Domain/ILaptopRepository.cs", "line": 3, "end_line": 5, "label": "Repository contract" }
+      ]
+    },
+    {
+      "id": "repository",
+      "type": "database",
+      "label": "InMemoryLaptopRepository",
+      "sublabel": "Seeded dataset",
+      "pos": [910, 560],
+      "size": [200, 90],
+      "sources": [
+        { "path": "LaptopApi.Infrastructure/InMemoryLaptopRepository.cs", "line": 5, "end_line": 14, "label": "Seeded data source" }
+      ]
+    },
+    {
+      "id": "dto",
+      "type": "backend",
+      "label": "LaptopDto",
+      "sublabel": "API response contract",
+      "pos": [610, 560],
+      "size": [180, 74],
+      "sources": [
+        { "path": "LaptopApi.Application/LaptopDto.cs", "line": 3, "end_line": 9, "label": "DTO contract" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Clean Architecture layers",
+      "wraps": ["controller", "service", "domain", "repository", "dto"],
+      "pad": 32
+    },
+    {
+      "kind": "security-group",
+      "label": "Feature-gated runtime behavior",
+      "wraps": ["controller", "service", "feature-flags"],
+      "pad": 18
+    }
+  ],
+  "connections": [
+    {
+      "id": "client-controller",
+      "from": "clients",
+      "to": "controller",
+      "label": "GET /api/laptops"
+    },
+    {
+      "id": "controller-service",
+      "from": "controller",
+      "to": "service",
+      "label": "GetLaptopsAsync()"
+    },
+    {
+      "id": "controller-flags",
+      "from": "controller",
+      "to": "feature-flags",
+      "label": "FeatureGate(\"EnableExperimentalList\")",
+      "fromSide": "top",
+      "toSide": "left"
+    },
+    {
+      "id": "service-flags",
+      "from": "service",
+      "to": "feature-flags",
+      "label": "IsEnabledAsync(\"EnableDiscountPrice\")",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "service-repository",
+      "from": "service",
+      "to": "repository",
+      "label": "GetAllAsync()",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "repository-domain",
+      "from": "repository",
+      "to": "domain",
+      "label": "Laptop[]",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "service-domain",
+      "from": "service",
+      "to": "domain",
+      "label": "uses Laptop model"
+    },
+    {
+      "id": "service-dto",
+      "from": "service",
+      "to": "dto",
+      "label": "maps to DTO",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Entry point",
+      "items": [
+        "The API app wires controllers and feature management in Program.cs",
+        "The LaptopsController exposes the main listing endpoint and an experimental feature-gated route"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Application behavior",
+      "items": [
+        "LaptopService coordinates the use case and checks feature flags before discounting prices",
+        "The response is shaped into LaptopDto for the API contract"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Persistence model",
+      "items": [
+        "The domain owns the Laptop entity and the repository abstraction",
+        "The infrastructure implementation uses an in-memory list seeded with three sample laptops"
+      ]
+    }
+  ]
+}

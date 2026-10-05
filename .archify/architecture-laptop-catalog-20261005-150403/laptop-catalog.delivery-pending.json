@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "command": "deliver",
+  "status": "pending",
+  "receiptId": "5833714a-1263-47f6-ac0e-008b61f28778",
+  "input": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-catalog-20261005-150403\\candidate.json",
+  "output": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-catalog-20261005-150403\\laptop-catalog.html"
+}

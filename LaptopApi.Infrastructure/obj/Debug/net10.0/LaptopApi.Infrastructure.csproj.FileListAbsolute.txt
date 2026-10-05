@@ -1,0 +1,17 @@
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\bin\Debug\net10.0\LaptopApi.Infrastructure.deps.json
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\bin\Debug\net10.0\LaptopApi.Infrastructure.dll
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\bin\Debug\net10.0\LaptopApi.Infrastructure.pdb
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\bin\Debug\net10.0\LaptopApi.Application.dll
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\bin\Debug\net10.0\LaptopApi.Domain.dll
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\bin\Debug\net10.0\LaptopApi.Application.pdb
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\bin\Debug\net10.0\LaptopApi.Domain.pdb
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.csproj.AssemblyReference.cache
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.AssemblyInfoInputs.cache
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.AssemblyInfo.cs
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopAp.FC084F26.Up2Date
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.dll
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\refint\LaptopApi.Infrastructure.dll
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.pdb
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\ref\LaptopApi.Infrastructure.dll

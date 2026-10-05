@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="LaptopApi.Api/LaptopApi.Api.csproj" />
+  <Project Path="LaptopApi.Application/LaptopApi.Application.csproj" />
+  <Project Path="LaptopApi.Domain/LaptopApi.Domain.csproj" />
+  <Project Path="LaptopApi.Infrastructure/LaptopApi.Infrastructure.csproj" />
+</Solution>
