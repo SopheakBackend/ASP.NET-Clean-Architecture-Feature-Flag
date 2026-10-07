@@ -20,7 +20,7 @@ The solution is structured into four isolated layers following the **Dependency 
 ```
 ##  Testing the API (Without Postman)
 
-You can easily test the API directly inside VS Code using the `.http` file without needing external tools like Postman[cite: 9, 10]:
+You can easily test the API directly inside VS Code using the `.http` file without needing external tools like Postman:
 
 1. **Install the Extension:** Install the **[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)** extension in VS Code.
 2. **Open the HTTP File:** Navigate to `LaptopApi.Api/LaptopApi.Api.http` in your file explorer[cite: 9].
