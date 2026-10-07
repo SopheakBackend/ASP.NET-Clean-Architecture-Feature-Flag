@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-clean-architecture-20261007-162618\\candidate.json",
+    "sha256": "fe7b277d4d1d9fc30b6cf6989548ebd59711aaf4a882e3cb871a4525caf3e2e3",
+    "bytes": 6218
+  },
+  "artifact": {
+    "path": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-clean-architecture-20261007-162618\\laptop-clean-architecture.html",
+    "sha256": "454e04d3e588eb812fd683690f83f4fc59996ae92fe5d032a85c9878975c2fde",
+    "bytes": 758240
+  },
+  "gates": {
+    "validate": "fail",
+    "deliver": "not-run",
+    "check": "not-run",
+    "browser-check": "not-run"
+  },
+  "failedStage": "validate",
+  "diagnostics": [
+    {
+      "code": "composition/container-border-run",
+      "severity": "error",
+      "message": "[composition/container-border-run] architecture connections[3] id \"application-to-domain\" \"application-service\" -> \"domain-contract\" follows region \"Domain Layer\" top border for 138px on segment 1 [1045, 296] -> [1183, 296] — if the authored fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connection crosses the boundary perpendicularly instead of following its border.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 3,
+        "id": "application-to-domain",
+        "from": "application-service",
+        "to": "domain-contract"
+      },
+      "evidence": {
+        "frameKind": "region",
+        "frameId": 3,
+        "frameLabel": "Domain Layer",
+        "side": "top",
+        "segmentIndex": 1,
+        "overlapLengthPx": 138,
+        "from": [
+          1045,
+          296
+        ],
+        "to": [
+          1183,
+          296
+        ]
+      },
+      "supportedFixes": [
+        "if the authored fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connection crosses the boundary perpendicularly instead of following its border"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-clean-architecture-20261007-162618\\review-2\\laptop-clean-architecture.finalize.json",
+    "summaryReceipt": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-clean-architecture-20261007-162618\\review-2\\laptop-clean-architecture.finalize-summary.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-07T09:29:03.577Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 711,
+  "nextAction": {
+    "action": "edit-in-place",
+    "candidate": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-clean-architecture-20261007-162618\\candidate.json",
+    "constraint": "Preserve all semantics and user-fixed geometry. Use references/architecture-layout-repair.md to choose a local repair or connected-scene reflow; edit the existing candidate.",
+    "then": "finalize-once"
+  }
+}

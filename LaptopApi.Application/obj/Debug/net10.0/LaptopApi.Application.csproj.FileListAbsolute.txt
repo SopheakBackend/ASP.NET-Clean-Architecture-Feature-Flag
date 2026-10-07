@@ -13,3 +13,4 @@ D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Applic
 D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\refint\LaptopApi.Application.dll
 D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.pdb
 D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\ref\LaptopApi.Application.dll
+D:\Internship\LaptopAPI\LaptopApi.Application\obj\Debug\net10.0\LaptopApi.Application.sourcelink.json

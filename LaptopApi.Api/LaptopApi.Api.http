@@ -1,6 +1,9 @@
 @LaptopApi.Api_HostAddress = http://localhost:5273
 
-GET {{LaptopApi.Api_HostAddress}}/weatherforecast/
+### Get All Laptops
+GET {{LaptopApi.Api_HostAddress}}/api/laptops
 Accept: application/json
 
-###
+### Get Experimental List
+GET {{LaptopApi.Api_HostAddress}}/api/laptops/experimental-list
+Accept: application/json

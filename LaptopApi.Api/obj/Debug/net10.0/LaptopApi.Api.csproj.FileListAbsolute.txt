@@ -42,3 +42,4 @@ D:\Internship\LaptopAPI\LaptopApi.Api\obj\Debug\net10.0\refint\LaptopApi.Api.dll
 D:\Internship\LaptopAPI\LaptopApi.Api\obj\Debug\net10.0\LaptopApi.Api.pdb
 D:\Internship\LaptopAPI\LaptopApi.Api\obj\Debug\net10.0\LaptopApi.Api.genruntimeconfig.cache
 D:\Internship\LaptopAPI\LaptopApi.Api\obj\Debug\net10.0\ref\LaptopApi.Api.dll
+D:\Internship\LaptopAPI\LaptopApi.Api\obj\Debug\net10.0\LaptopApi.Api.sourcelink.json

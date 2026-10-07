@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "a320d36b-6cf5-4f74-b3f3-bf0a882c7f98",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-clean-architecture-20261007-162618\\candidate.json",
+  "output": "D:\\Internship\\LaptopAPI\\.archify\\architecture-laptop-clean-architecture-20261007-162618\\laptop-clean-architecture.html",
+  "specification": {
+    "sha256": "d98d2a27af8a19f830f723a53cb582b13924eb889b38eea698ece6ca3a898585",
+    "bytes": 6165
+  },
+  "artifact": {
+    "sha256": "6db9ef83bfafb4191994f91821a5f523b90c0310cc5f690e780cf08106d1ead4",
+    "bytes": 758032
+  }
+}

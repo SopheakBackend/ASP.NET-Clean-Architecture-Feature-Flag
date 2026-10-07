@@ -15,3 +15,4 @@ D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Inf
 D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\refint\LaptopApi.Infrastructure.dll
 D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.pdb
 D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\ref\LaptopApi.Infrastructure.dll
+D:\Internship\LaptopAPI\LaptopApi.Infrastructure\obj\Debug\net10.0\LaptopApi.Infrastructure.sourcelink.json

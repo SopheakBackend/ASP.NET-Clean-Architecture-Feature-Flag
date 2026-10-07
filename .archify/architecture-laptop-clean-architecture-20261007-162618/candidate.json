@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Laptop API — Clean Architecture",
+    "output": ".archify/architecture-laptop-clean-architecture-20261007-162618/laptop-clean-architecture.html",
+    "quality_profile": "showcase",
+    "locale": "en",
+    "repository": {
+      "url": "https://github.com/Sunxander/LaptopAPI.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "37c1d3f5d7bd480adc435f548558f2277c99afb2"
+    }
+  },
+  "components": [
+    {
+      "id": "client",
+      "type": "external",
+      "label": "Client / Browser",
+      "sublabel": "HTTP consumer",
+      "pos": [35, 55],
+      "size": [165, 78]
+    },
+    {
+      "id": "api-controller",
+      "type": "backend",
+      "label": "LaptopsController",
+      "sublabel": "GET /api/Laptops",
+      "pos": [350, 55],
+      "size": [210, 88],
+      "sources": [
+        {
+          "path": "LaptopApi.Api/Controllers/LaptopsController.cs",
+          "line": 7,
+          "end_line": 30,
+          "label": "HTTP endpoints"
+        },
+        {
+          "path": "LaptopApi.Api/Program.cs",
+          "line": 8,
+          "end_line": 16,
+          "label": "Controller and DI setup"
+        },
+        {
+          "path": "LaptopApi.Api/LaptopApi.Api.csproj",
+          "line": 15,
+          "end_line": 18,
+          "label": "Project references"
+        }
+      ]
+    },
+    {
+      "id": "application-service",
+      "type": "backend",
+      "label": "Application",
+      "sublabel": "LaptopService · LaptopDto",
+      "pos": [700, 55],
+      "size": [230, 88],
+      "sources": [
+        {
+          "path": "LaptopApi.Application/LaptopService.cs",
+          "line": 6,
+          "end_line": 34,
+          "label": "Service and mapping"
+        },
+        {
+          "path": "LaptopApi.Application/LaptopDto.cs",
+          "line": 3,
+          "end_line": 9,
+          "label": "Response DTO"
+        },
+        {
+          "path": "LaptopApi.Application/LaptopApi.Application.csproj",
+          "line": 3,
+          "end_line": 5,
+          "label": "Domain reference"
+        }
+      ]
+    },
+    {
+      "id": "infrastructure-repository",
+      "type": "backend",
+      "label": "InMemoryLaptopRepository",
+      "sublabel": "Seeded List<Laptop>",
+      "pos": [1070, 55],
+      "size": [240, 88],
+      "sources": [
+        {
+          "path": "LaptopApi.Infrastructure/InMemoryLaptopRepository.cs",
+          "line": 5,
+          "end_line": 14,
+          "label": "Repository and in-memory data"
+        },
+        {
+          "path": "LaptopApi.Infrastructure/LaptopApi.Infrastructure.csproj",
+          "line": 3,
+          "end_line": 5,
+          "label": "Project reference"
+        }
+      ]
+    },
+    {
+      "id": "domain-contract",
+      "type": "backend",
+      "label": "Domain",
+      "sublabel": "ILaptopRepository · Laptop entity",
+      "pos": [1055, 320],
+      "size": [270, 96],
+      "sources": [
+        {
+          "path": "LaptopApi.Domain/ILaptopRepository.cs",
+          "line": 3,
+          "end_line": 5,
+          "label": "Repository contract"
+        },
+        {
+          "path": "LaptopApi.Domain/Laptop.cs",
+          "line": 3,
+          "end_line": 8,
+          "label": "Laptop entity"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "API Layer",
+      "wraps": ["api-controller"],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Application Layer",
+      "wraps": ["application-service"],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Infrastructure Layer",
+      "wraps": ["infrastructure-repository"],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Domain Layer",
+      "wraps": ["domain-contract"],
+      "pad": 22
+    }
+  ],
+  "connections": [
+    {
+      "id": "client-to-api",
+      "from": "client",
+      "to": "api-controller",
+      "label": "HTTP GET /api/Laptops",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api-to-application",
+      "from": "api-controller",
+      "to": "application-service",
+      "label": "GetLaptopsAsync()"
+    },
+    {
+      "id": "application-to-infrastructure",
+      "from": "application-service",
+      "to": "infrastructure-repository",
+      "label": "GetAllAsync() via DI",
+      "variant": "emphasis"
+    },
+    {
+      "id": "application-to-domain",
+      "from": "application-service",
+      "to": "domain-contract",
+      "label": "uses ILaptopRepository"
+    },
+    {
+      "id": "infrastructure-implements-domain",
+      "from": "infrastructure-repository",
+      "to": "domain-contract",
+      "label": "implements interface",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "violet",
+      "title": "Composition & project references",
+      "items": [
+        "Program.cs registers ILaptopRepository → InMemoryLaptopRepository and ILaptopService → LaptopService.",
+        "API references Application and Infrastructure; Application references Domain.",
+        "Infrastructure.csproj references Application, as currently authored; the runtime service call still targets the injected ILaptopRepository contract."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Request path",
+      "items": [
+        "LaptopsController calls LaptopService.GetLaptopsAsync(); the service calls GetAllAsync() and maps Laptop values to LaptopDto.",
+        "The infrastructure repository owns and returns its seeded in-memory List<Laptop>; this is not a durable database."
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "Evidence snapshot",
+      "items": [
+        "Source links are pinned to committed revision 37c1d3f5d7bd480adc435f548558f2277c99afb2; uncommitted workspace edits are excluded.",
+        "LaptopApi.Api/Program.cs has local edits, so its cited registration lines refer to the pinned committed version."
+      ]
+    }
+  ]
+}
